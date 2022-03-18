@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="QBCore Documentation">
+    <title>QBCore Documentation</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <script>
+
+        $(function () {
+            $("#footer").load("footer.html");$("#side-bar-right").load("side-bar-right.html"); $("#content-down").load("content-down.html"); $("#content-up").load("content-up.html");
+        });
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">QBCore Documentation</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="list-group">
+                <div class="list-group">
+                    <a class="list-group-item " href="installation-steps.html"><span class="fa fa-square"></span>&nbsp;Installation</a>
+                    <a class="list-group-item " href="scripts.html"><span class="fa fa-square"></span>&nbsp;Scripts Information</a>
+                    <a class="list-group-item " href="client-reference.html"><span class="fa fa-square"></span>&nbsp;Client Reference</a>
+                    <a class="list-group-item " href="server-reference.html"><span class="fa fa-square"></span>&nbsp;Server Reference</a>
+                    <a class="list-group-item" href="playerdata.html"><span class="fa fa-square"></span>&nbsp;PlayerData</a>
+                    <a class="list-group-item" href="conversions.html"><span class="fa fa-square"></span>&nbsp;Conversions</a>
+                    <a class="list-group-item" href="code-examples.html"><span class="fa fa-square"></span>&nbsp;Code Examples</a>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-sm-3 -->
+        <div class="col-sm-8">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="page-header">
+                    <h1>Welcome to Documentation of QBCore Framework</h1>
+                </div>
+
+                <h3>Database Conversions (WIP)</h3>
+                <table class="table table-responsive table-bordered ">
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Conversion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">MySQL.Async.fetchScalar()</td>
+                            <td>exports['ghmattimysql']:scalar()</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">MySQL.Async.fetchAll()</td>
+                            <td>exports['ghmattimysql']:execute()</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">MySQL.Async.execute()</td>
+                            <td>exports['ghmattimysql']:execute()</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">MySQL.Sync.fetchAll</td>
+                            <td>exports['ghmattimysql']:executeSync</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">MySQL.Sync.execute</td>
+                            <td>exports['ghmattimysql']:executeSync</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>ESX Conversions (WIP)</h3>
+                <table class="table table-responsive table-bordered ">
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Conversion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">esx:onPlayerDeath</td>
+                            <td>hospital:server:SetDeathStatus</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">esx:showAdvancedNotification</td>
+                            <td>QBCore:Notify</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">esx:showHelpNotification</td>
+                            <td>QBCore:Notify</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">esx:showNotification</td>
+                            <td>QBCore:Notify</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.GetPlayerData</td>
+                            <td>QBCore.Functions.GetPlayerData</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.SetPlayerData</td>
+                            <td>QBCore:Player:SetPlayerData</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.TriggerServerCallback</td>
+                            <td>QBCore.Functions.TriggerCallback</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.Game.DeleteObject</td>
+                            <td>QBCore.DeleteObject</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.Game.DeleteVehicle</td>
+                            <td>QBCore.Functions.DeleteVehicle</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.Game.GetClosestPed</td>
+                            <td>QBCore.Functions.GetClosestPed</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.Game.GetClosestPlayer</td>
+                            <td>QBCore.Functions.GetClosestPlayer</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.Game.GetClosestVehicle</td>
+                            <td>QBCore.Functions.GetClosestVehicle</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.Game.GetPlayers</td>
+                            <td>QBCore.Functions.GetPlayers</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.Game.GetVehicles</td>
+                            <td>QBCore.Functions.GetVehicles</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.Game.SetVehicleProperties</td>
+                            <td>QBCore.Functions.SetVehicleProperties</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.Game.SpawnVehicle</td>
+                            <td>QBCore.Functions.SpawnVehicle</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.Game.Teleport</td>
+                            <td>Use FiveM Native SetEntityCoords and SetEntityHeading</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.Game.Utils.DrawText3D</td>
+                            <td>QBCore.Functions.DrawText3D</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.GetPlayerFromId</td>
+                            <td>QBCore.Functions.GetPlayer</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.GetPlayerFromIdentifier</td>
+                            <td>QBCore.Functions.GetPlayerByCitizenId</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.RegisterServerCallback</td>
+                            <td>QBCore.Functions.CreateCallback</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.RegisterUsableItem</td>
+                            <td>QBCore.Functions.CreateUseableItem</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">ESX.UseItem</td>
+                            <td>QBCore.Functions.UseItem</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br><p><b>Player Functions</b></p>
+                <pre>local Player = QBCore.Functions.GetPlayer(source) -- gets player</pre>
+
+                <table class="table table-responsive table-bordered ">
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Conversion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">Player.addAccountMoney</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.addInventoryItem</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.addMoney</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.addWeapon</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.addWeaponAmmo</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.addWeaponComponent</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.canCarryItem</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.canSwapItem</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.getAccount</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.getAccounts</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.getCoords</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.getGroup</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.getIdentifier</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.getInventoryItem</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.getWeight</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.removeAccountMoney</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.removeInventoryItem</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.removeMoney</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.removeWeapon</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.setAccountMoney</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.setJob</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Player.setMoney</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar navbar-inverse navbar-static-bottom" role="navigation">
+        <div class="container">
+            <div class="col-md-4">
+                <p><font color="white">Copyright © 2004 - 2069; by sheen</font></p>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="http://www.fivem.network">FiveM.Network</a></li>
+                    <li><a href="http://www.youtube.com/user/clownTVchannel/videos">sheenthebest YT</a></li>
+                    <li><a href="http://www.youtube.com/channel/UCm0bxctzoArpzQuIoW9PGsA/videos">FiveM.Network YT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

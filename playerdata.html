@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="QBCore Documentation">
+    <title>QBCore Documentation</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <script>
+
+        $(function () {
+            $("#footer").load("footer.html");$("#side-bar-right").load("side-bar-right.html"); $("#content-down").load("content-down.html"); $("#content-up").load("content-up.html");
+        });
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">QBCore Documentation</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div><!--navbar -->
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="list-group">
+                <div class="list-group">
+                    <a class="list-group-item " href="installation-steps.html"><span class="fa fa-square"></span>&nbsp;Installation</a>
+                    <a class="list-group-item " href="scripts.html"><span class="fa fa-square"></span>&nbsp;Scripts Information</a>
+                    <a class="list-group-item " href="client-reference.html"><span class="fa fa-square"></span>&nbsp;Client Reference</a>
+                    <a class="list-group-item " href="server-reference.html"><span class="fa fa-square"></span>&nbsp;Server Reference</a>
+                    <a class="list-group-item" href="playerdata.html"><span class="fa fa-square"></span>&nbsp;PlayerData</a>
+                    <a class="list-group-item" href="conversions.html"><span class="fa fa-square"></span>&nbsp;Conversions</a>
+                    <a class="list-group-item" href="code-examples.html"><span class="fa fa-square"></span>&nbsp;Code Examples</a>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-sm-3 -->
+        <div class="col-sm-8">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="page-header">
+                    <h1>PlayerData</h1>
+                </div>
+                <p>All PlayerData you can get from players</p>
+
+                <pre>Server Side Example
+                    <pre>
+                    local Player = QBCore.Functions.GetPlayer(source) -- gets player
+                    local hunger = Player.PlayerData.metadata["hunger"] -- using player variable to get data and saving it into "hunger" variable
+                    print(hunger) -- prints the value</pre>
+                </pre>
+
+                <pre>Client Side Example
+                    <pre>
+                    local Player = QBCore.Functions.GetPlayerData() -- gets player
+                    local hunger = Player.PlayerData.metadata["hunger"] -- using player variable to get data and saving it into "hunger" variable
+                    print(hunger) -- prints the value</pre>
+                </pre>
+
+                <pre>Code Usage
+                    <pre>
+                    local Player = QBCore.Functions.GetPlayerData() -- for server side -> QBCore.Functions.GetPlayer(source)
+                    local hunger = Player.PlayerData.metadata["hunger"] -- using player variable to get data and saving it into "hunger" variable
+                    
+                    if hunger > 50 then
+                        print("hunger value is above the half")
+                    end</pre>
+                    <pre>
+                    local Player = QBCore.Functions.GetPlayer(source)
+                    local injail = Player.PlayerData.metadata["injail"]
+                    
+                    if injail then
+                        print("returns true, player is in the jail")
+                    else
+                        print("returns false, player is free")
+                    end</pre>
+                </pre>
+
+
+                <table class="table table-responsive table-bordered ">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Explanation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["hunger"]</td>
+                            <td>Returns hunger value</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["thirst"]</td>
+                            <td>Returns thirst value</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["stress"]</td>
+                            <td>Returns stress value</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["isdead"]</td>
+                            <td>Returns true/false - Is Player Dead</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["inlaststand"]</td>
+                            <td>Returns true/false - Is Player in Last Stand</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["armor"]</td>
+                            <td>Returns armor value</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["ishandcuffed"]</td>
+                            <td>Returns true/false - Is Player in Handcuffs</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["tracker"]</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["injail"]</td>
+                            <td>Returns true/false - Is Player in Jail</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["jailitems"]</td>
+                            <td>Returns array of jail items</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["status"]</td>
+                            <td>nil</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["phone"]</td>
+                            <td>nil</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["fitbit"]</td>
+                            <td>nil</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["commandbinds"]</td>
+                            <td>Returns array of binded commands</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["bloodtype"]</td>
+                            <td>Returns blood type</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["dealerrep"]</td>
+                            <td>Returns dealer reputation value</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["weapondealerrep"]</td>
+                            <td>Returns weapondealer reputation value</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["craftingrep"]</td>
+                            <td>Returns crafting reputation value</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["attachmentscraftingrep"]</td>
+                            <td>Returns crafting attachments reputation value</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["currentapartment"]</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["jobrep"]</td>
+                            <td>Returns job reputation value</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["callsign"]</td>
+                            <td>Returns callsign</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["fingerprint"]</td>
+                            <td>Returns finger print</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["walletid"]</td>
+                            <td>Returns wallet id</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["licenses"]</td>
+                            <td>Returns array with licenses</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.metadata["inside"]</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.job</td>
+                            <td>Returns job array</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.job.name</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.job.label</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.job.payment</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.job.onduty</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.job.isboss</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.job.grade</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.job.grade.name</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.job.grade.level</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.gang</td>
+                            <td>Returns gang array</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.gang.name</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.gang.label</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.gang.payment</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.gang.onduty</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.gang.isboss</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.gang.grade</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.gang.grade.name</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.gang.grade.level</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PlayerData.position</td>
+                            <td>Returns latest saved position (vector3)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar navbar-inverse navbar-static-bottom" role="navigation">
+        <div class="container">
+            <div class="col-md-4">
+                <p><font color="white">Copyright © 2004 - 2069; by sheen</font></p>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="http://www.fivem.network">FiveM.Network</a></li>
+                    <li><a href="http://www.youtube.com/user/clownTVchannel/videos">sheenthebest YT</a></li>
+                    <li><a href="http://www.youtube.com/channel/UCm0bxctzoArpzQuIoW9PGsA/videos">FiveM.Network YT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

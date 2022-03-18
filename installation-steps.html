@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="QBCore Documentation">
+    <title>QBCore Documentation</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">QBCore Documentation</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div><!--navbar -->
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="list-group">
+                <div class="list-group">
+                    <a class="list-group-item " href="installation-steps.html"><span class="fa fa-square"></span>&nbsp;Installation</a>
+                    <a class="list-group-item " href="scripts.html"><span class="fa fa-square"></span>&nbsp;Scripts Information</a>
+                    <a class="list-group-item " href="client-reference.html"><span class="fa fa-square"></span>&nbsp;Client Reference</a>
+                    <a class="list-group-item " href="server-reference.html"><span class="fa fa-square"></span>&nbsp;Server Reference</a>
+                    <a class="list-group-item" href="playerdata.html"><span class="fa fa-square"></span>&nbsp;PlayerData</a>
+                    <a class="list-group-item" href="conversions.html"><span class="fa fa-square"></span>&nbsp;Conversions</a>
+                    <a class="list-group-item" href="code-examples.html"><span class="fa fa-square"></span>&nbsp;Code Examples</a>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-sm-3 -->
+        <div class="col-sm-8">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="page-header">
+                    <h1>Installation</h1>
+                </div>
+                <h2>Setup</h2>
+                <p><b>This setup is for VPS/VDS with Windows only! (works also on selfhosted server on your PC)</b></p>
+                
+                <ul>
+                    <li>Download -> XAMPP, Visual Studio Code (or any text editor, for editing scripts), Firefox (or any browser with low RAM usage)</li>
+                    <li>Open port 30120 (TCP and UTP), there is tutorial how to do it -> <a href="https://www.firehousesoftware.com/webhelp/FH/Content/FHEnterprise/FHEnterpriseInstallationGuide/24_StaticPort.htm" target="_blank">showcase</a>
+                        (you can skip first 2 steps in that tutorial and just type into searchbar -> Windows Firewall with Advanced Security)</li>
+                    <li>Install all downloaded stuff from first step</li>
+                    <li>Select these things during XAMPP installation -> <a href="https://gyazo.com/fdc4a566ed8e2b5bc0fc4be8d3d1a0b7" target="_blank">showcase</a></li>
+                    <li>Run XAMPP, click on MYSQL, APACHE start buttons so your database will start (XAMPP must be always running with your server)</li>
+                </ul>
+
+                <h2>FiveM Server Installation</h2>
+                <ul>
+                    <li>Download first and second part of server files from your fivem.network account</li>
+                    <li>Extract first part, put FXServer folder on desktop</li>
+                    <li>Put second part into "resources" folder</li>
+                    <li>Open server.cfg and change license key and steam web API key</li>
+                    <li>Create database called qbcore</li>
+                        <ul>
+                            <li>Open browser -> localhost/phpmyadmin (or some software that you use for database)</li>
+                            <li>Click on NEW on left side -> <a href="https://gyazo.com/c15ffb11b6e80e9c5d2a236bf80c019c" target="_blank">showcase</a></li>
+                        </ul>
+                    <li>Import sql into database</li>
+                        <ul>
+                            <li>Click on "qbcore" database</li>
+                            <li>Import button </li>
+                            <li>Select sql.sql (ignore all red text after importing them)</li>
+                        </ul>
+                    <li>Go to your server folder (FXServer) </li>
+                        <ul>
+                            <li>find server.cfg and open it</li>
+                            <li>change license key and steam api key -> <a href="https://gyazo.com/9a24ab23668c70adca85cf5041f979d8" target="_blank">showcase</a></li>
+                            <li>if you don't know how to register them, uncle google will helps :]</li>
+                        </ul>
+                    <li>Again go to your server folder</li>
+                        <ul>
+                            <li>Go to FXServer/server and start FXServer.exe (it will open small window )</li>
+                            <li>Check this part of <a href="https://youtu.be/rrmBI0dTnto?t=178" target="_blank">video</a> or take a look on official fivem <a href="https://docs.fivem.net/docs/server-manual/setting-up-a-server/" target="_blank">manual</a></li>
+                            <li>Setup txAdmin (after setup it will start booting your server)</li>
+                            <li>Join your server via F8 console -> connect IPofYourVPS</li>
+                            <li>Have Fun</li>
+                        </ul>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="navbar navbar-inverse navbar-static-bottom" role="navigation">
+        <div class="container">
+            <div class="col-md-4">
+                <p><font color="white">Copyright © 2004 - 2069; by sheen</font></p>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="http://www.fivem.network">FiveM.Network</a></li>
+                    <li><a href="http://www.youtube.com/user/clownTVchannel/videos">sheenthebest YT</a></li>
+                    <li><a href="http://www.youtube.com/channel/UCm0bxctzoArpzQuIoW9PGsA/videos">FiveM.Network YT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

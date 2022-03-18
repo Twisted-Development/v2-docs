@@ -1,0 +1,585 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="QBCore Documentation">
+    <title>QBCore Documentation</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">QBCore Documentation</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div><!--navbar -->
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="list-group">
+                <div class="list-group">
+                    <a class="list-group-item " href="installation-steps.html"><span class="fa fa-square"></span>&nbsp;Installation</a>
+                    <a class="list-group-item " href="scripts.html"><span class="fa fa-square"></span>&nbsp;Scripts Information</a>
+                    <a class="list-group-item " href="client-reference.html"><span class="fa fa-square"></span>&nbsp;Client Reference</a>
+                    <a class="list-group-item " href="server-reference.html"><span class="fa fa-square"></span>&nbsp;Server Reference</a>
+                    <a class="list-group-item" href="playerdata.html"><span class="fa fa-square"></span>&nbsp;PlayerData</a>
+                    <a class="list-group-item" href="conversions.html"><span class="fa fa-square"></span>&nbsp;Conversions</a>
+                    <a class="list-group-item" href="code-examples.html"><span class="fa fa-square"></span>&nbsp;Code Examples</a>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-sm-3 -->
+        <div class="col-sm-8">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="page-header">
+                    <h1>Scripts</h1>
+                </div>
+                <p><b>Most information about scripts you can find here. Information could be outdated!</b></p>
+
+                <h1>Core (qb-core)</h1>
+                <ul>
+                    <li><b>config.lua</b></li>
+                    <ul><br>
+                        <img src="https://i.gyazo.com/5156832e2e5f7ddac554f541a035ec90.png" alt="config.lua">
+                        <img src="https://i.gyazo.com/e21ebf111b8831f962ec97bedfac7af2.png" alt="config.lua">
+                    </ul>
+
+                    <br><li><b>shared</b></li>
+                    <ul>
+                        <li>There you can find there all jobs,gangs,items,vehicles etc.</li>
+                    </ul>
+                </ul>
+
+                <h1>VOIP (pma-voice)</h1>
+                <ul>
+                    <li>Voice Module</li>
+                    <ul>
+                        <li>Server using pma-voice module that handle whole mic communication in the game without using any external programs like teamspeak etc..</li>
+                        <ul>
+                            <li>If you want to adjust voice distances you can check pma-voice/shared.lua file</li>
+                            <li><a href="https://github.com/AvarianKnight/pma-voice" target="_blank">pma-voice Documentation</a></li>
+                        </ul>
+                    </ul>
+                </ul>
+
+                <h1>Jobs</h1>
+                <h6><b style="color:red">Radialmenu (F1) has category with job options (not every job has options in F1).</b></h6>
+
+                <li><b>Police (qb-policejob, qb-mdt)</b></li>
+                <ul>
+                    <li>config.lua</li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li>Evidence Searching/Collecting</li>
+                    <ul>
+                        <li>If you stand to nearby crime scene (shots fired, murder etc), take flashlight, move around and aim on the ground. You should be able to see blue and red markers.</li>
+                        <li>Make sure you got empty evidence bag with you.</li>
+                    </ul>
+
+                    <li>Commands:</li>
+                    <ul>
+                        <li>/clearblood = Clears nearby blood, evidence bag required.</li>
+                        <li>/clearcasings = Clears nearby casings/bullets, evidence bag required.</li>
+                        <li>/takedna id = Takes DNA sample from player, evidence bag required.</li>
+                        <li>/grantlicense id driver/weapon = Grant a license to somone (example: /granlicense id driver)</li>
+                        <li>/revokelicense id driver/weapon = Revoke a license from someone</li>
+                        <li>/takedrivinglicense</li>
+                        <li>/jail id time = Jail player, time is in minutes</li>
+                        <li>/unjail id = Release player from the jail</li>
+                        <li>/cuff = Cuff closest player</li>
+                        <li>/escort = Escort closest player</li>
+                        <li>/sc = Softcuff closest player (so he can walk while cuffed)</li>
+                        <li>/depot = Send closest vehicle into depot</li>
+                        <li>/impound = Send closest vehicle into police impound</li>
+                        <li>/paytow = Pay the towtruck driver</li>
+                        <li>/paylawyer = Pay the lawyer</li>
+                        <li>/resetarmor</li>
+                        <li>/911p msg = Answer /911 calls</li>
+                        <li>/mdt = Opens MDT</li>
+                        <li>/flagplate plate</li>
+                        <li>/unflagplate plate</li>
+                        <li>/plateinfo plate</li>
+                        <li>/cam id = Check cameras</li>
+                        <li>/pobject = Place objects</li>
+                        <li>/spikestrip = Place spikes</li>
+                    </ul>
+
+                </ul>
+                <li><b>Ambulance (qb-ambulancejob)</b></li>
+                <ul>
+                    <li>Commands:</li>
+                    <ul>
+                        <li>/911e msg = Answer /911 calls</li>
+                        <li>/status = Check status of closest player</li>
+                        <li>/revivep = Revive closest player</li>
+                        <li>/heal = Heal closest player</li>
+                    </ul>
+                </ul>
+                <li><b>Real Estate Agent (qb-houses)</b></li>
+                <ul>
+                    <li>Commands:</li>
+                    <ul>
+                        <li>/createhouse price tier = Create house to buy, tier = interior (1-8)</li>
+                        <li>/addgarage = Add garage location to closest house</li>
+                    </ul>
+                </ul>
+                <li><b>Taxi (qb-taxi)</b></li>
+                <ul>
+                    <li>WIP</li>
+                </ul>
+                <li><b>Bus Driver (qb-busjob)</b></li>
+                <ul>
+                    <li>WIP</li>
+                </ul>
+                <li><b>Cardealer (qb-vehicleshop)</b></li>
+                <ul>
+                    <li>WIP</li>
+                </ul>
+                <li><b>Mechanic (qb-mechanicjob)</b></li>
+                <ul>
+                    <li>Commands:</li>
+                    <ul>
+                        <li>/setmechanic id = You must be added in the Authorized list to use this command, check config.lua</li>
+                        <li>/firemechanic id</li>
+                    </ul>
+                </ul>
+                <li><b>Judge</b></li>
+                <ul>
+                    <li>WIP</li>
+                </ul>
+                <li><b>Lawyer</b></li>
+                <ul>
+                    <li>WIP</li>
+                </ul>
+                <li><b>Reporter (qb-newsjob)</b></li>
+                <ul>
+                    <li>Commands:</li>
+                    <ul>
+                        <li>/newscam = Camera</li>
+                        <li>/newsmic = Microphone</li>
+                        <li>/newsbmic = Boom Microphone</li>
+                    </ul>
+                </ul>
+                <li><b>Trucker (qb-truckerjob)</b></li>
+                <ul>
+                    <li>WIP</li>
+                </ul>
+                <li><b>Tow (qb-towjob)</b></li>
+                <ul>
+                    <li>Commands:</li>
+                    <ul>
+                        <li>/tow = Place closest vehicle on the tow truck (flatbed)</li>
+                        <li>/npc = Toggle Npc Missions</li>
+                    </ul>
+                </ul>
+                <li><b>Garbage Collector (qb-garbagejob)</b></li>
+                <ul>
+                    <li>Commands:</li>
+                    <ul>
+                        <li>/cleargarbroutes = Clear garbage routes</li>
+                    </ul>
+                </ul>
+                <li><b>Vineyard (qb-vineyard)</b></li>
+                <ul>
+                    <li>WIP</li>
+                </ul>
+                <li><b>Hotdogs Seller (qb-hotdogjob)</b></li>
+                <ul>
+                    <li>Commands:</li>
+                    <ul>
+                        <li>/removestand = Removes hotdog stand</li>
+                    </ul>
+                </ul>
+                <li><b>Recycling Center (qb-recyclejob)</b></li>
+                <ul>
+                    <li>WIP</li>
+                </ul>
+
+                <h1>Scripts Basic Information</h1>
+                <ul>
+                    <li><b style="color:red">Almost every script has configuration file where you can setup almost everything, i recommend to go through all the script files.</b></li>
+                </ul>
+                <ul>
+                    <li><b>Admin Commands:</b></li>
+                    <ul>
+                        <li>/tp id = Teleports on player</li>
+                        <li>/tp x y z = Teleports on coords (example /tp 1.0 1.0 1.0)</li>
+                        <li>/tpm = Teleports to marker</li>
+                        <li>/togglepvp = Toggle PVP on server</li>
+                        <li>/addpermission = Give player permission (admin/god)</li>
+                        <li>/removepermission = Remove players permission</li>
+                        <li>/car name = Spawn vehicle by spawn name (ex. /car adder)</li>
+                        <li>/dv = Delete Vehicle</li>
+                        <li>/giveitem id name amount = Give item to any player (example: /giveitem 1 weapon_assaultrifle 1)</li>
+                        <li>/randomitems</li>
+                        <li>/resetinv id = Reset players inventory</li>
+                        <li>/givemoney id type(cash/bank/crypto) amount = Give money to player (ex. /givemoney id cash 1000)</li>
+                        <li>/setmoney id type(cash/bank/crypto) amount = Set players money (ex. /setmoney id cash 1000)</li>
+                        <li>/setjob id job grade = example /setjob 1 police 2</li>
+                        <li>/setgang id gang grade = example /setgang 1 ballas 2</li>
+                        <li>/clearinv id = Clears player inventory</li>
+                        <li>/newdoor = Opens menu to create new doorlocks</li>
+                        <li>/kickall = Kick everyone from the server</li>
+                        <li>/blips = Toggle player blips</li>
+                        <li>/names = Toggle player names</li>
+                        <li>/coords</li>
+                        <li>/noclip</li>
+                        <li>/admincar = Set ownership of vehicle to yourself</li>
+                        <li>/announce msg = Announce anything you want</li>
+                        <li>/admin = Opens Admin Menu</li>
+                        <li>/staffchat msg</li>
+                        <li>/warn id reason</li>
+                        <li>/checkwarns id</li>
+                        <li>/delwarn id warning_number</li>
+                        <li>/reporttoggle = Toggle Reports from Players</li>
+                        <li>/reportr id = Reply to report</li>
+                        <li>/setspeed</li>
+                        <li>/setammo</li>
+                        <li>/aheal</li>
+                        <li>/revive id</li>
+                        <li>/kill id</li>
+                        <li>/setmetadata</li>
+                        <li>/fix</li>
+                        <li>/repairweapon</li>
+                        <li>/freezetime</li>
+                        <li>/freezeweather</li>
+                        <li>/weather</li>
+                        <li>/blackout</li>
+                        <li>/morning</li>
+                        <li>/noon</li>
+                        <li>/evening</li>
+                        <li>/night</li>
+                        <li>/time </li>
+                    </ul>
+
+                    <li><b>Basic Player Commands:</b></li>
+                    <ul>
+                        <li>/binds = Opens binding menu, type command without /</li>
+                        <li>/givecash id =  You can give "cash" to player that is in 10 meter radius</li>
+                        <li>/report msg = Report anything you want</li>
+                        <li>/job = Check your current job</li>
+                        <li>/gang = Check your current gang</li>
+                        <li>/cash</li>
+                        <li>/bank</li>
+                        <li>/rob = Rob closest player</li>
+                        <li>/getintrunk</li>
+                        <li>/putintrunk</li>
+                        <li>/resetparachute</li>
+                        <li>/id = Check your server id</li>
+                        <li>/engine = Toggle vehicle engine</li>
+                        <li>/givecarkeys</li>
+                        <li>/transferVehicle</li>
+                        <li>/sling</li>
+                        <li>/e</li>
+                        <li>/emote</li>
+                        <li>/emotemenu</li>
+                        <li>/walk</li>
+                        <li>/walks</li>
+                        <li>/nearby</li>
+                        <li>/me</li>
+                        <li>/atm</li>
+                        <li>/reloadskin</li>
+                        <li>/shuff = Sit into drivers seat</li>
+                        <li>/coords</li>
+                        <li>/copycoords</li>
+                        <li>/bill = (doesn't work for "unemployed")</li>
+                    </ul>
+                    <li><b>Admin Script (qb-adminmenu)</b></li>
+                    <ul>
+                        <li>Admin groups/permissions are admin/god</li>
+                        <li>God is the highest permission</li>
+                    </ul>
+                    <li><b>Logs (qb-logs)</b></li>
+                    <ul>
+                        <li>This script is discord logger - change discord webhooks in config.lua - it has also categories</li>
+                        <li>Google how to make discord webhooks, if you never worked with them.</li>
+                    </ul>
+                    <li><b>Garages (qb-garages)</b></li>
+                    <ul>
+                        <li>config.lua has all garages, depots inside.</li>
+                        <li>If you want to add another or change name of garage, you will find it right here.</li>
+                    </ul>
+                    <li><b>Doorlocks (nui_doorlock)</b></li>
+                    <ul>
+                        <li>Server using doorlock script that allows you to create new doorlocks in the game</li>
+                        <li>command /newdoor - set settings and follow the instructions</li>
+                    </ul>
+                    <li><b>Vehicle Shop (qb-vehicleshop)</b></li>
+                    <ul>
+                        <li>Config file has options to create unlimited shops/showplaces etc</li>
+                    </ul>
+                    <li><b>Drugs (qb-drugs)</b></li>
+                    <ul>
+                        <li>Admin Commands:</li>
+                        <ul>
+                            <li>/newdealer</li>
+                            <li>/deletedealer</li>
+                            <li>/dealers</li>
+                            <li>/dealergoto</li>
+                        </ul>
+                    </ul>
+                    <li><b>Traphouses (qb-traphouses)</b></li>
+                    <ul>
+                        <li>Place where you can sell stolen items or clean markedbills</li>
+                        <li>How to get pin code</li>
+                        <ul>
+                            <li>You must be close to location of the traphouse (200 game meters)</li>
+                            <li>Take out your gun and try to aim on any NPC around the traphouse</li>
+                            <li>If NPC puts his hands up, he should give you note with the pin code.</li>
+                        </ul>
+                        <li>Commands:</li>
+                        <ul>
+                            <li>/entertraphouse</li>
+                            <li>/multikeys</li>
+                        </ul>
+                    </ul>
+                    <li><b>House Robberies (qb-houserobbery)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Bank Robberies (qb-bankrobbery)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Store Robberies (qb-storerobbery)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>"Criminal Actions" (qb-criminalactions)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Houses (qb-houses)</b></li>
+                    <ul>
+                        <li>Commands:</li>
+                        <ul>
+                            <li>/decorate</li>
+                            <li>/ring</li>
+                        </ul>
+                    </ul>
+                    <li><b>Apartments (qb-apartments)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Interior Spawner (qb-interiors)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Banking and ATMs (qb-banking, qb-atms)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Bossmenu and Gangmenu (qb-bossmenu, qb-gangmenu)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Hunting (qb-hunting)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Inventory (qb-inventory)</b></li>
+                    <ul>
+                        <li>Hud (qb-hud)</li>
+                    </ul>
+                    <li><b>iFruit Store (qb-ifruitstore)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Jewelery Heist (qb-jewelery)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Lapraces (qb-lapraces)</b></li>
+                    <ul>
+                        <li>Commands:</li>
+                        <ul>
+                            <li>/cancelrace</li>
+                            <li>/togglesetup</li>
+                        </ul>
+                    </ul>
+                    <li><b>Streetraces (qb-streetraces)</b></li>
+                    <ul>
+                        <li>Commands:</li>
+                        <ul>
+                            <li>/createrace</li>
+                            <li>/stoprace</li>
+                            <li>/quitrace</li>
+                            <li>/startrace</li>
+                            
+                        </ul>
+                    </ul>
+                    <li><b>Target System (qb-target)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Tunerchip (qb-tunerchip)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Vehicle Keys (qb-vehiclekeys)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Vehicle Damage System (qb-vehiclefailure)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Vehicle Sales (qb-vehiclesales)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Weapons on back (qb-weapon_sling)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Weed (qb-weed)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Weather (qb-weathersync)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Truck Robbery (qb-truckrobbery)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Tattoshops (qb-tattooshop)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Clothing Script(qb-clothes)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Shops (qb-shops)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Radial Menu (qb-radialmenu)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Police Badge (qb-policebadge)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Prison (qb-prison)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Phone (qb-phone)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Pawnshop (qb-pawnshop)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Notes (qb-notes)</b></li>
+                    <ul>
+                        <li>Commands:</li>
+                        <ul>
+                            <li>/notes</li>
+                        </ul>
+                    </ul>
+                    <li><b>Scoreboard (qb-scoreboard)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Scrapyard (qb-scrapyard)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Multichar Script (qb-multicharacter)</b></li>
+                    <ul>
+                        <li>Commands:</li>
+                        <ul>
+                            <li>/logout</li>
+                        </ul>
+                    </ul>
+                    <li><b>Mining (qb-mining)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Sit and Lay Anywhere (qb-chair-bed-system)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Gym (qb-gym)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Fitbit (qb-fitbit)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Diving (qb-diving)</b></li>
+                    <ul>
+                        <li>Commands:</li>
+                        <ul>
+                            <li>/divingsuit</li>
+                        </ul>
+                    </ul>
+                    <li><b>Tuning Shop (qb-customs)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Command Binding (qb-commandbinding)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>City Hall (qb-cityhall)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Crypto (qb-crypto)</b></li>
+                    <ul>
+                        <li>Commands:</li>
+                        <ul>
+                            <li>/setcryptoworth</li>
+                            <li>/checkcryptoworth</li>
+                            <li>/crypto</li>
+                        </ul>
+                    </ul>
+                    <li><b>Small Resources (qb-smallresources)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                    <li><b>Spawn (qb-spawn)</b></li>
+                    <ul>
+                        <li>WIP</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar navbar-inverse navbar-static-bottom" role="navigation">
+        <div class="container">
+            <div class="col-md-4">
+                <p><font color="white">Copyright © 2004 - 2069; by sheen</font></p>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="http://www.fivem.network">FiveM.Network</a></li>
+                    <li><a href="http://www.youtube.com/user/clownTVchannel/videos">sheenthebest YT</a></li>
+                    <li><a href="http://www.youtube.com/channel/UCm0bxctzoArpzQuIoW9PGsA/videos">FiveM.Network YT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
